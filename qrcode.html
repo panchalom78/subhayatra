@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Share</title>
+    <link rel="stylesheet" href="qrcode.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="group-box">
+        <div class="group-name">Group name</div>
+        <div class="share-box">
+          <div class="share-title">Share me</div>
+          <div class="qr-code">
+            <img src="youtube.jpg" alt="QR Code" />
+          </div>
+          <div class="social-icons">
+            <i class="fa-brands fa-instagram" style="color: orange"></i>
+            <i class="fa-brands fa-whatsapp" style="color: green"></i>
+            <i class="fa-brands fa-facebook" style="color: blue"></i>
+          </div>
+          <div class="link-box">
+            <div class="link_box_uper">
+              <input
+                type="text"
+                value="https://shubhyatra.com/group/unique-link"
+                readonly
+              />
+            </div>
+            <div class="link_box_lower">
+              <button onclick="copyLink()">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="qrcode.js"></script>
+  </body>
+</html>
