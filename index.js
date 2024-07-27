@@ -13,8 +13,8 @@ const __dirname = path.dirname(__filename);
 
 
 app.get("/",(req,res)=>{
-    console.log(path.join(__dirname, 'public','home','home.html'));
-    res.sendFile(path.join(__dirname, 'public','home','home.html'));
+    console.log(path.join(__dirname, 'public','home','index.html'));
+    res.sendFile(path.join(__dirname, 'public','home','index.html'));
 })
 
 app.listen(3000);
