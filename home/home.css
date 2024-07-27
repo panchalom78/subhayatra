@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+BE+VLG:wght@100..400&display=swap');
+
 *{
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
 }
 .item{
     display: inline-block;
@@ -13,8 +15,9 @@ a,li{
     font-weight: 500;
     padding: 10px;
     font-size: 16px;
-
+    transition: background-color .5s ease;
     color:black;
+    border-radius:50px;
 }
 header{
     display: flex;
@@ -22,25 +25,32 @@ header{
     padding: 20px;
     background-color: #009FBD;
 }
-.nav li a:hover{
+.nav .item:hover{
     background-color:#F9E2AF;
     border: none;
-    border-radius:50px;
     cursor: pointer;
 }
+
+#col{   
+    background-color: aliceblue;
+    border-radius: 50px;
+    margin-left: 30px;
+    transition: box-shadow .5s ease;
+}
+#col:hover{
+    box-shadow: 5px 5px 4px black;
+}
+
+
 img{
     height: 200px;
-    width: 1527px;
-    overflow: hidden;
+    width: 100vw;
+
 }
 .wd{
     display: flex;
     justify-content:center;
     font-size:x-large;
-    font-family: Helvetica;
-}
-#col{   
-    background-color: aliceblue;
-    border-radius: 50px;
-    margin-left: 30px;
+    font-family: "Playwrite BE VLG", cursive;
+    padding: 20px 0px;
 }
