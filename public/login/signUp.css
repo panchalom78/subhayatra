@@ -175,7 +175,6 @@ input {
 .social-container a {
     border: 1px solid #070606;
     color: black;
-    
     text-decoration: none;
     border-radius: 50%;
     display: inline-flex;
@@ -184,4 +183,9 @@ input {
     margin: 0 5px;
     height: 40px;
     width: 40px;
+    transition: background-color .3s ease;
+}
+
+.social-container a:hover{
+    background-color: #070606;
 }
