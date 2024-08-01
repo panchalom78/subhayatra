@@ -6,15 +6,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = new pg.Client({
-    user: process.env.PGUSER,
-    host: process.env.PGHOST,
-    password: process.env.PGPASSWORD,
-    port : process.env.PGPORT,
-    database : process.env.PGDATABASE
+const { Pool } = pg;
+
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
 })
 
-db.connect();
+
+
 
 const app  = express();
 app.use(express.static('public'));
@@ -36,8 +35,8 @@ app.get("/login",(req,res)=>{
 app.get("/data",async (req,res)=>{
 
     try{
-        const r = await db.query("select * from login");
-        console.log(r.rows);
+        const r = await pool.query("select * from login");
+        console.log(r);
     } catch(err){
         console.log(err);
     }
