@@ -36,7 +36,7 @@ app.get("/data",async (req,res)=>{
 
     try{
         const r = await pool.query("select * from login");
-        console.log(r);
+        res.json(r.rows[0]);
     } catch(err){
         console.log(err);
     }
