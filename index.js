@@ -1,8 +1,20 @@
 import express from "express"
 import path from "path";
 import { fileURLToPath } from "url";
+import pg from "pg"
+import dotenv from "dotenv"
+import { log } from "console";
 
+dotenv.config();
+const db = new pg.Client({
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    password: process.env.PGPASSWORD,
+    port : process.env.PGPORT,
+    database : process.env.PGDATABASE
+})
 
+db.connect();
 const app  = express();
 app.use(express.static('public'));
 
@@ -18,6 +30,12 @@ app.get("/",(req,res)=>{
 
 app.get("/login",(req,res)=>{
     res.sendFile(path.join(__dirname,'public','login','signUp.html'));
+})
+
+app.get("/data",async (req,res)=>{
+    
+    const r = await db.query("select * from login");
+    console.log(r.rows);
 })
 
 app.listen(3000);
