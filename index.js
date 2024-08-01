@@ -2,10 +2,7 @@ import express from "express"
 import path from "path";
 import { fileURLToPath } from "url";
 import pg from "pg"
-import dotenv from "dotenv"
-import { log } from "console";
 
-dotenv.config();
 const db = new pg.Client({
     user: process.env.PGUSER,
     host: process.env.PGHOST,
