@@ -2,6 +2,9 @@ import express from "express"
 import path from "path";
 import { fileURLToPath } from "url";
 import pg from "pg"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const db = new pg.Client({
     user: process.env.PGUSER,
@@ -12,6 +15,7 @@ const db = new pg.Client({
 })
 
 db.connect();
+
 const app  = express();
 app.use(express.static('public'));
 
@@ -30,9 +34,13 @@ app.get("/login",(req,res)=>{
 })
 
 app.get("/data",async (req,res)=>{
-    
-    const r = await db.query("select * from login");
-    console.log(r.rows);
+
+    try{
+        const r = await db.query("select * from login");
+        console.log(r.rows);
+    } catch(err){
+        console.log(err);
+    }
 })
 
 app.listen(3000);
