@@ -17,6 +17,7 @@ const app  = express();
 app.use(express.static('public'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'ejs');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,9 +29,15 @@ app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','home','index.html'));
 });
 
+
+
 app.get("/login",(req,res)=>{
-    res.sendFile(path.join(__dirname,'public','login','signUp.html'));
-})
+    res.render(path.join(__dirname,'views','login','signUp.ejs'),{check:false});
+});
+
+app.get("/signIn",(req,res)=>{
+    res.render(path.join(__dirname,'views','login','signUp.ejs'),{check:true});
+});
 
 app.get("/data",async (req,res)=>{
 

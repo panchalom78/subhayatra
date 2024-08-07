@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up / Sign In</title>
-    <link rel="stylesheet" href="signUp.css">
+    <link rel="stylesheet" href="/login/signUp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="container" id="container">
+    <div class="container <% if (check==true) {%> right-panel-active <% } else {%>class <% } %>"  id="container">
         <div class="form-container sign-up-container">
             <form  id="signform" action="/signIn" method="post">
                 <h1>Create Account</h1>
@@ -52,6 +52,6 @@
             </div>
         </div>
     </div>
-    <script src="signup.js"></script>
+    <script src="/login/signup.js"></script>
 </body>
 </html>
